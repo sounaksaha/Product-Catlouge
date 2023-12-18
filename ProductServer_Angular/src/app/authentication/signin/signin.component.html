@@ -1,0 +1,103 @@
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(139, 66%, 84%)">
+            Welcome To Our Shop...!!!<br />
+            <span style="color: hsl(218, 81%, 75%)">Keep calm and do shopping online...!!!</span>
+          </h1>
+          
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  
+          <div class="card bg-glass">
+            <div class="card-body px-4 py-5 px-md-5">
+               <div class="px-5 ms-xl-4">
+            
+            <span class="h1 fw-bold mb-0" style="color: rgb(185, 49, 244); text-align: center;">Login..!!!</span>
+          </div>
+          <br>
+              <form class="p-3 mt-3" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+            
+                <!-- Email input -->
+                <div class="form-outline mb-4" >
+                  <input type="text" name="email" id="email" class="form-control" placeholder="Enter Your Email address" #email="ngModel" [pattern]="pattern" ngModel required />
+                   
+                </div>
+                    <div *ngIf="email.invalid && email.dirty && email.touched">
+                        <p class="text-danger">Invalid Email</p>
+                    </div>
+                  
+                
+  
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" name="password" id="pwd" class="form-control"placeholder="Enter Your Password" #password="ngModel" ngModel required />
+                    
+                    </div>
+                    <div *ngIf="password.invalid && password.dirty && password.touched">
+                        <p class="text-danger">Invalid Password</p>
+                    </div>
+                  
+                
+  
+    
+  
+                <!-- Submit button -->
+                
+                <button [disabled]="loginForm.invalid" class="btn btn-outline-info">Login</button>
+  
+                <!-- Register buttons -->
+                <div class="text-center">
+                  
+             Don't have an account ? &nbsp;  <button routerLink="/signup" class="btn btn-outline-success">Register here</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+
+
+<!-- <section>
+    <div class="wrapper fadeIn first">
+        <div class="logo">
+            <img src="https://th.bing.com/th/id/OIP.yOX1_KBsR6fClg3ek8G_ZwHaHx?w=208&h=219&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="">
+        </div>
+        <div class="text-center mt-4 name">
+            Sign In
+        </div>
+        <form class="p-3 mt-3" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+            <div class="form">
+                <div class="form-field d-flex align-items-center">
+                    <span class="far fa-user"></span>
+                    <input type="text" name="email" id="email" placeholder="Email" class="fadeIn second"
+                        #email="ngModel" [pattern]="pattern" ngModel required />
+                </div>
+                <div *ngIf="email.invalid && email.dirty && email.touched">
+                    <p class="text-danger">Invalid Email</p>
+                </div>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Password" class="fadeIn third"
+                    #password="ngModel" ngModel required />
+            </div>
+            <div *ngIf="password.invalid && password.dirty && password.touched">
+                <p class="text-danger">Invalid Password</p>
+            </div>
+            <button [disabled]="loginForm.invalid" class="btn mt-3 fadeIn fourth">Login</button>
+        </form>
+        <div class="text-center fs-6 fadeIn-first">
+            <p>Don't have an account? </p> <a href="signup"><b>Sign up</b></a>
+        </div>
+    </div>
+</section> -->

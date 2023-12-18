@@ -1,0 +1,14 @@
+#page-not-found {
+    color: #1976d2;
+}
+
+.container {
+    display: flex;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}

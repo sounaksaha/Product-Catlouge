@@ -1,0 +1,167 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-2">
+        <!-- Section: Sidebar -->
+        <section>
+          <!-- Section: Filters -->
+          <section id="filters" data-auto-filter="true">
+            <h5>Filters</h5>
+
+            <!-- Section: Brands -->
+            <section class="mb-4" data-filter="brands">
+              <h6 class="font-weight-bold mb-3">Brands</h6>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="sony" id="condition-checkbox" [(ngModel)]="sony" (change)="update()">
+                <label class="form-check-label text-uppercase small text-muted" for="condition-checkbox">
+                  sony
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="samsung" id="condition-checkbox2" [(ngModel)]="samsung" (change)="update()">
+                <label class="form-check-label text-uppercase small text-muted" for="condition-checkbox2">
+                  samsung
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="boat" id="condition-checkbox3" [(ngModel)]="boat" (change)="update()">
+                <label class="form-check-label text-uppercase small text-muted" for="condition-checkbox3">
+                  boat
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="puma" id="condition-checkbox4" [(ngModel)]="puma" (change)="update()">
+                <label class="form-check-label text-uppercase small text-muted" for="condition-checkbox4">
+                  puma
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="nike" id="condition-checkbox4" [(ngModel)]="nike" (change)="update()">
+                <label class="form-check-label text-uppercase small text-muted" for="condition-checkbox4">
+                  nike
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="nike" id="condition-checkbox4" [(ngModel)]="adidas" (change)="update()">
+                <label class="form-check-label text-uppercase small text-muted" for="condition-checkbox4">
+                  adidas
+                </label>
+              </div>
+            </section>
+            <!-- Section: Condition -->
+
+            <!-- Section: Price -->
+            <section class="mb-4">
+              <h6 class="font-weight-bold mb-3">Price</h6>
+              
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" value=0 id="price-radio" (change)="priceupdate($event)" [checked]="true">
+                <label class="form-check-label text-uppercase small text-muted" for="price-radio">
+                  All
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" value=1 id="price-radio" (change)="priceupdate($event)">
+                <label class="form-check-label text-uppercase small text-muted" for="price-radio">
+                  Under ₹1000
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="price-radio2" value=2 (change)="priceupdate($event)">
+                <label class="form-check-label text-uppercase small text-muted" for="price-radio2">
+                    ₹1001 to ₹2000
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="price-radio3" value=3 (change)="priceupdate($event)">
+                <label class="form-check-label text-uppercase small text-muted" for="price-radio3">
+                    ₹2001 to ₹3000
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="price-radio4" value=4 (change)="priceupdate($event)">
+                <label class="form-check-label text-uppercase small text-muted" for="price-radio4">
+                    ₹3001 to ₹4000
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="price-radio4" value=5 (change)="priceupdate($event)">
+                <label class="form-check-label text-uppercase small text-muted" for="price-radio4">
+                    ₹4001 to ₹5000
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="price-radio5" value=6 (change)="priceupdate($event)">
+                <label class="form-check-label text-uppercase small text-muted" for="price-radio5">
+                    ₹5001 &amp; above
+                </label>
+              </div>
+            </section>
+            <!-- Section: Price -->
+
+            <!-- Section: Color -->
+          </section>
+          <!-- Section: Filters -->
+        </section>
+        <!-- Section: Sidebar -->
+      </div>
+      <div class="col-md-10">
+        <section>
+            <h3 class="font-weight-bold mb-2 text-center">Product Searched
+              <a routerLink="/user/home"><button type="button" class="btn btn-info ">Go Back</button></a>
+            </h3>
+            
+            <div class="text-center container py-5">
+              <div class="row">
+                <div *ngFor="let product of products" class="col-lg-4 col-md-12 mb-4">
+                  <div class="card">
+                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                      data-mdb-ripple-color="light">
+                      <img
+                    class="w-100"  
+                      alt="Image Not Found"
+                        src="data:image/jpg;base64,{{product.productImage}}"
+                        height="200">
+                        <div class="mask">
+                          <div class="d-flex justify-content-start align-items-end h-100">
+                            <h5><span class="badge bg-primary ms-2">New</span></h5>
+                          </div>
+                        </div>
+                        <div class="hover-overlay">
+                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                      <a class="text-reset">
+                        <h5 class="card-title mb-3">{{product.productName}}</h5>
+                      </a>
+                      <a class="text-reset">
+                        <p>{{product.productBrand}}</p>
+                      </a>
+                      <h6 class="mb-3">{{product.productPrice |currency:'INR'}}</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="justify-content-between align-items-center pb-2 mb-1">
+                        <a routerLink="/user/productdetail/{{product.productCode}}"><button type="button" class="btn btn-primary">View Details</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      </div>
+    </div>
+  </div>

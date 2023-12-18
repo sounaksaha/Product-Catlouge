@@ -1,0 +1,33 @@
+<header class="p-3 border-bottom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a routerLink="/admin/home" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="/admin/products" class="nav-link px-2 link-dark">Products</a></li>
+          <li><a href="/admin/productdelivery" class="nav-link px-2 link-dark">Delivery</a></li>
+          <li><a href="/admin/customers" class="nav-link px-2 link-dark">Customers</a></li>
+        </ul>
+
+        <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 text-center" >
+            <h3 class="text-center" style="color: black;">Welcome</h3>&nbsp;<h3 class="text-center" style="color: rgb(13, 31, 225);">{{username}}</h3>
+        </div>
+
+        <div ngbDropdown class="dropdown text-end">
+            <a href="#" (click)="false"
+                class="d-block link-dark text-decoration-none dropdown-toggle show align-self-center"
+                ngbDropdownToggle>
+                <img src="https://th.bing.com/th/id/OIP.yOX1_KBsR6fClg3ek8G_ZwHaHx?w=208&h=219&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <a ngbDropdownItem routerLink="/admin/profile" class="dropdown-item" >Profile</a>
+                <div class="dropdown-divider"></div>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/signout">Sign out</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>

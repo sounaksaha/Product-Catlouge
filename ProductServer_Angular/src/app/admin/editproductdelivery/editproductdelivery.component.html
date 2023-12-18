@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Edit Record</h4>
+    <button type="button" class="btn-close" aria-describedby="modal-title"
+        (click)="modal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <form #editProduct="ngForm">
+        <div class="mb-3">
+            <label for="dateOfBirth">Pincode</label>
+            <div class="input-group">
+                <input #pincode="ngModel" min="100000" max="999999" id="pincode" class="form-control" placeholder="Enter your pincode" name="pincode"
+                    type="number" [(ngModel)]="delivery.pincode" required disabled/>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="score">Expected Delivery Days</label>
+            <div class="input-group">
+                <input #days="ngModel" min="0" id="days" class="form-control" placeholder="Enter your days" name="days" type="number"
+                    [(ngModel)]="delivery.days" required/>
+            </div>
+            <div *ngIf="days.invalid && days.touched" class="text-danger" id="alert">
+                Enter valid days
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.close(0)">Cancel</button>
+    <button [disabled]="editProduct.invalid" type="button" class="btn btn-danger" (click)="modal.close(1)">Ok</button>
+</div>

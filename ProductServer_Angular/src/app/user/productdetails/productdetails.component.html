@@ -1,0 +1,72 @@
+<app-header></app-header>
+<div class="container">
+    <nav class="navbar navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="toggle-navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+              <div class="collapse navbar-collapse" id="navbar-content">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <h1 class="nav-link" style="font-size: xx-large;">Product Details</h1>
+                  </li>
+                  
+                </ul>
+              </div>
+            </nav> 
+            <div class="box">
+                <div class="box-1"></div>
+                <div class="box-2"></div>
+              </div>
+   
+    <div class="card">
+        <div class="row">
+            <aside class="col-sm-5 border-right">
+                <article class="gallery-wrap">
+                    <div class="img-big-wrap"><img src="data:image/jpg;base64,{{product.productImage}}">
+                    </div> <!-- slider-product.// -->
+                </article> <!-- gallery-wrap .end// -->
+            </aside>
+            <aside class="col-sm-7">
+                <article class="card-body p-5">
+                    <h3 class="title mb-3">{{product.productName}}</h3>
+
+                    <p class="price-detail-wrap">
+                        <span class="price h3 text-info">{{product.productPrice |currency:'INR'}}</span>
+                    </p> <!-- price-detail-wrap .// -->
+                    <dl class="item-property">
+                        <dt>Description</dt>
+                        <dd>
+                            <p>{{product.productDescription}}</p>
+                        </dd>
+                    </dl>
+                    <dl class="param param-feature">
+                        <dt>ProductCode#</dt>
+                        <dd>{{product.productCode}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+                    <dl class="param param-feature">
+                        <dt>Brand</dt>
+                        <dd>{{product.productBrand}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+
+
+                    <hr>
+                    <dl class="param param-feature">
+                        <dt>Check ServiceAbility</dt>
+                        <dd>
+                            <form #searchForm="ngForm" (ngSubmit)="checkdelivery(searchForm.value)">
+                                <div class="input-group mt-2">
+                                    <input type="number" name="data" min=0 class="form-control" placeholder="Recipient's username"
+                                        aria-label="Recipient's username" aria-describedby="button-addon2" required ngModel>
+                                    <button [disabled]="searchForm.invalid" class="btn btn-outline-primary" type="submit"
+                                        id="button-addon2">Check</button>
+                                </div>
+                            </form>
+                        </dd>
+                    </dl>
+
+                </article> <!-- card-body.// -->
+            </aside> <!-- col.// -->
+        </div> <!-- row.// -->
+    </div> <!-- card.// -->
+</div>

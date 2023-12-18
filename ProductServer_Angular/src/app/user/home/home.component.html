@@ -1,0 +1,18 @@
+
+
+
+ <app-header></app-header>
+<div class="img row-2">
+    <form class= "domain-search" #searchForm="ngForm" (ngSubmit)="search(searchForm.value)">
+        <div class="container">
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search">
+                        <input type="text" class="form-control" placeholder="Search Your Product" name="searchParameter" required ngModel>
+                        <button [disabled]="searchForm.invalid" class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div> 
